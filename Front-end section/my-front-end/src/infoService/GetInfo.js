@@ -34,7 +34,7 @@ const getDiscreption = async () => {
   });
 };
 const getImage = async () => {
-  return await fetch("http://localhost:3000/api/description", {
+  return await fetch("http://localhost:3000/api/picture", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(),

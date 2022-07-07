@@ -1,5 +1,6 @@
 import { infoService } from "./infoService/GetInfo";
 import { useEffect, useState } from "react";
+import Header from "./components/Header";
 function App() {
   const [name, setName] = useState();
   const [age, setAge] = useState();
@@ -27,10 +28,12 @@ function App() {
       .getDiscreption()
       .then((res) => res.json())
       .then((data) => setDesc(data));
+    infoService.getImage((res) => res.json()).then((im) => console.log(im));
   }, []);
 
   return (
     <div className="age">
+      <Header />
       <h1>{name && name.name}</h1>
       <div>{age && age.age}</div>
       <div>{major && major.major}</div>
