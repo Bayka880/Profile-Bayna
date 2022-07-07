@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { infoService } from "./infoService/GetInfo";
+import { useEffect, useState } from "react";
 function App() {
+  const [name, setName] = useState();
+  const [age, setAge] = useState();
+  const [major, setMajor] = useState();
+  const [profile, setProfile] = useState();
+  const [desc, setDesc] = useState();
+  useEffect(() => {
+    infoService
+      .getName()
+      .then((res) => res.json())
+      .then((data) => setName(data));
+    infoService
+      .getAge()
+      .then((res) => res.json())
+      .then((age) => setAge(age));
+    infoService
+      .getMajor()
+      .then((res) => res.json())
+      .then((major) => setMajor(major));
+    infoService
+      .getProfile()
+      .then((res) => res.json())
+      .then((data) => setProfile(data));
+    infoService
+      .getDiscreption()
+      .then((res) => res.json())
+      .then((data) => setDesc(data));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="age">
+      <h1>{name && name.name}</h1>
+      <div>{age && age.age}</div>
+      <div>{major && major.major}</div>
+      <div>{desc && desc.description}</div>
     </div>
   );
 }
