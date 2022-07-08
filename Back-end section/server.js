@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 4000;
 const nameJson = require("./data/name.json");
 const ageJson = require("./data/age.json");
 const majorJson = require("./data/major.json");
