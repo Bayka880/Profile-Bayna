@@ -1,40 +1,40 @@
 const getName = async () => {
-  return await fetch("http://localhost:4000/api/name", {
+  return await fetch("http://localhost:3000/api/name", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(),
   });
 };
 const getAge = async () => {
-  return await fetch("http://localhost:4000/api/age", {
+  return await fetch("http://localhost:3000/api/age", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(),
   });
 };
 const getMajor = async () => {
-  return await fetch("http://localhost:4000/api/major", {
+  return await fetch("http://localhost:3000/api/major", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(),
   });
 };
 const getProfile = async () => {
-  return await fetch("http://localhost:4000/api/profile", {
+  return await fetch("http://localhost:3000/api/profile", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(),
   });
 };
 const getDiscreption = async () => {
-  return await fetch("http://localhost:4000/api/description", {
+  return await fetch("http://localhost:3000/api/description", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(),
   });
 };
 const getImage = async () => {
-  return await fetch("http://localhost:4000/api/picture", {
+  return await fetch("http://localhost:3000/api/picture", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(),

@@ -1,18 +1,18 @@
 import React from "react";
-import "../style/footer.css";
+// import "../style/footer.css";
 export default function Footer() {
   return (
     <div className="footer-section">
       <div>
         <a href="tel:97191971">
-          <img src="./image/phone.svg" alt="phone" />
+          <img src="http://localhost:3000/Images/phone.svg" alt="phone" />
         </a>
         <a href="https://www.facebook.com/">
-          <img src="./image/facebook.svg" alt="facebook" />
+          <img src="http://localhost:3000/Images/facebook.svg" alt="facebook" />
         </a>
         <a href="https://www.instagram.com/?hl=en">
           <img
-            src="./image/instagram.png"
+            src="http://localhost:3000/Images/instagram.png"
             style={{ width: "48px" }}
             alt="instagram"
           />

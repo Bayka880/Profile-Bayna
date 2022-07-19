@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { infoService } from "../infoService/GetInfo";
-import "../style/main.css";
+// import "../style/main.css";
 import Type from "./Type";
 export default function Main() {
   const [name, setName] = useState();
@@ -42,7 +42,11 @@ export default function Main() {
           <Type />
         </div>
         <div className="profile-section">
-          <img src="./image/profile.png" className="profile-pic" alt="" />
+          <img
+            src="http://localhost:3000/Images/profile.png"
+            className="profile-pic"
+            alt=""
+          />
         </div>
         <div>{desc && desc.description}</div>
       </div>

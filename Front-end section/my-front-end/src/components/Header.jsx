@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import ".././style/header.css";
+// import ".././style/header.css";
 export default function Header() {
   const [update, setUpdate] = useState(false);
   console.log(update);

@@ -1,14 +1,16 @@
 const express = require("express");
+require("dotenv").config();
 const app = express();
-const port = 4000;
-const nameJson = require("./data/name.json");
-const ageJson = require("./data/age.json");
-const majorJson = require("./data/major.json");
+const port = process.env.PORT;
+const nameJson = require("./models/name.json");
+const ageJson = require("./models/age.json");
+const majorJson = require("./models/major.json");
 const fs = require("fs");
-const image = `${__dirname}/data/profile.jpg`;
-const profile = require("./data/profile.json");
-const disc = require("./data/description.json");
+const image = `${__dirname}/models/profile.jpg`;
+const profile = require("./models/profile.json");
+const disc = require("./models/description.json");
 const cors = require("cors");
+const dessert = require("./models/dessert.json");
 
 app.use(
   cors({
@@ -33,5 +35,26 @@ app.get("/api/:name", cors(), (req, res) => {
   }
   res.end();
 });
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
+app.set("view options", { layout: false });
+
+// app.get("/ejs", (req, res) => {
+//   res.render("index", { name: "Bayna" });
+// });
+app.get("/ejs", (req, res) => {
+  var data = {
+    name: "Dessert",
+    a: dessert,
+    b: [
+      "/Images/cinnamon.webp",
+      "/Images/pumpkin.jpeg",
+      "/Images/donuits.webp",
+    ],
+  };
+  res.render("index", { data: data });
+});
 
 app.listen(port);
+console.log(process.env.PORT);
